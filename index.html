@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Portfolio - Guntur S.Kom | Web Developer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Reset dan variabel */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #1e40af;
+        --accent-color: #3b82f6;
+        --text-dark: #1f2937;
+        --text-light: #6b7280;
+        --bg-white: #ffffff;
+        --bg-light: #f9fafb;
+        --border-color: #e5e7eb;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --container-padding: 16px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        background-color: var(--bg-white);
+        color: var(--text-dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--container-padding);
+        width: 100%;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background-color: var(--primary-color);
+        border-radius: 2px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      .btn:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow);
+      }
+
+      /* Header & Navigation */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 15px 0;
+        backdrop-filter: blur(10px);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: clamp(1.5rem, 4vw, 1.8rem);
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+
+      .logo span {
+        color: var(--text-dark);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: clamp(15px, 3vw, 30px);
+      }
+
+      .nav-links a {
+        font-weight: 600;
+        position: relative;
+        padding: 5px 0;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary-color);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: var(--text-dark);
+      }
+
+      /* Hero Section */
+      .hero {
+        padding-top: 120px;
+        padding-bottom: 80px;
+        background-color: var(--bg-light);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      @media (min-width: 768px) {
+        .hero-content {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .hero-text h1 {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+
+      .hero-text h1 span {
+        color: var(--primary-color);
+      }
+
+      .hero-text p {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        color: var(--text-light);
+        margin-bottom: 30px;
+        max-width: 500px;
+      }
+
+      .hero-image {
+        text-align: center;
+        order: -1;
+      }
+
+      @media (min-width: 768px) {
+        .hero-image {
+          order: 1;
+        }
+      }
+
+      .profile-img {
+        width: min(350px, 70vw);
+        height: min(350px, 70vw);
+        max-width: 350px;
+        max-height: 350px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 10px solid white;
+        box-shadow: var(--shadow);
+      }
+
+      /* Fallback image jika foto tidak ditemukan */
+      .profile-img.fallback::after {
+        content: "Foto Guntur";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: #e5e7eb;
+        color: var(--text-light);
+        font-weight: bold;
+        border-radius: 50%;
+      }
+
+      /* Skills Section */
+      .skills-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      @media (min-width: 768px) {
+        .skills-container {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+      }
+
+      .skill-card {
+        background-color: var(--bg-light);
+        border-radius: 10px;
+        padding: clamp(20px, 3vw, 30px);
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .skill-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .skill-icon {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+
+      .skill-card h3 {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+        margin-bottom: 15px;
+      }
+
+      .tech-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+      }
+
+      .tech-tag {
+        background-color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border: 1px solid var(--border-color);
+      }
+
+      /* Projects Section */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      @media (min-width: 640px) {
+        .projects-grid {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+      }
+
+      .project-card {
+        background-color: var(--bg-white);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .project-img-container {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        background-color: #f3f4f6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .project-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .project-card:hover .project-img {
+        transform: scale(1.05);
+      }
+
+      .project-content {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-content h3 {
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        margin-bottom: 10px;
+        color: var(--primary-color);
+      }
+
+      .project-content p {
+        margin-bottom: 15px;
+        flex-grow: 1;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+      }
+
+      /* Gallery Section */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      @media (min-width: 640px) {
+        .gallery-grid {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 20px;
+        }
+      }
+
+      .gallery-item {
+        border-radius: 10px;
+        overflow: hidden;
+        height: 200px;
+        box-shadow: var(--shadow);
+      }
+
+      @media (min-width: 768px) {
+        .gallery-item {
+          height: 250px;
+        }
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      /* Profile Section */
+      .profile-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      @media (min-width: 992px) {
+        .profile-content {
+          grid-template-columns: 1fr 2fr;
+          gap: 50px;
+        }
+      }
+
+      .profile-img-container {
+        text-align: center;
+      }
+
+      .profile-img-large {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+      }
+
+      .profile-info h3 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        margin-bottom: 15px;
+      }
+
+      .profile-details {
+        margin-top: 20px;
+      }
+
+      .profile-detail {
+        display: flex;
+        margin-bottom: 15px;
+        align-items: flex-start;
+      }
+
+      .profile-detail i {
+        color: var(--primary-color);
+        width: 30px;
+        font-size: 1.2rem;
+        margin-top: 2px;
+      }
+
+      /* Contact Section */
+      .contact-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      @media (min-width: 768px) {
+        .contact-container {
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 30px;
+        }
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 20px;
+        background-color: var(--bg-light);
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        flex-wrap: wrap;
+      }
+
+      .contact-item:hover {
+        transform: translateY(-5px);
+        background-color: #f0f7ff;
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--text-dark);
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .social-links a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-5px);
+      }
+
+      /* Responsive Design Improvements */
+      @media (max-width: 767px) {
+        :root {
+          --container-padding: 20px;
+        }
+
+        section {
+          padding: 50px 0;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          background-color: white;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px 0;
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+          transform: translateY(-100%);
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+          z-index: 999;
+          gap: 0;
+        }
+
+        .nav-links.active {
+          transform: translateY(0);
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .nav-links a {
+          padding: 15px 0;
+          width: 100%;
+          text-align: center;
+          font-size: 1.1rem;
+        }
+
+        .nav-links a::after {
+          display: none;
+        }
+
+        .nav-links a:hover {
+          background-color: var(--bg-light);
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .hero {
+          padding-top: 100px;
+          min-height: auto;
+        }
+
+        .hero-text {
+          text-align: center;
+        }
+
+        .hero-text p {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .btn {
+          padding: 10px 20px;
+          font-size: 0.95rem;
+        }
+
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery-item {
+          height: 250px;
+        }
+
+        .contact-item {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .contact-icon {
+          margin: 0 auto;
+        }
+
+        .tech-tag {
+          font-size: 0.8rem;
+          padding: 5px 10px;
+        }
+      }
+
+      @media (min-width: 1400px) {
+        .container {
+          max-width: 1320px;
+        }
+      }
+
+      /* Touch device optimizations */
+      @media (hover: none) {
+        .btn:hover,
+        .skill-card:hover,
+        .project-card:hover,
+        .contact-item:hover {
+          transform: none;
+        }
+
+        .btn:active,
+        .skill-card:active,
+        .project-card:active,
+        .contact-item:active {
+          transform: scale(0.98);
+        }
+      }
+
+      /* Print styles */
+      @media print {
+        header,
+        footer,
+        .btn,
+        .mobile-menu-btn {
+          display: none !important;
+        }
+
+        .container {
+          max-width: 100%;
+          padding: 0;
+        }
+
+        section {
+          padding: 20px 0;
+          break-inside: avoid;
+        }
+
+        body {
+          font-size: 12pt;
+          line-height: 1.4;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header & Navigation -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">Guntur<span>.DEV</span></div>
+        <button
+          class="mobile-menu-btn"
+          id="mobileMenuBtn"
+          aria-label="Toggle menu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav-links" id="navLinks">
+          <a href="#home">Home</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#profile">Profile</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>
+              Saya <span>Guntur S.Kom</span><br />Web Developer Profesional
+            </h1>
+            <p>
+              Seorang pengembang web dengan spesialisasi dalam PHP Native dan
+              Laravel. Saya membuat pengalaman digital yang menarik dan
+              fungsional untuk memecahkan masalah bisnis.
+            </p>
+            <a href="#projects" class="btn">Lihat Project Saya</a>
+          </div>
+          <div class="hero-image">
+            <img
+              src="guntur.jpg"
+              alt="Guntur S.Kom"
+              class="profile-img"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80';"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+      <div class="container">
+        <h2 class="section-title">Keahlian Saya</h2>
+        <div class="skills-container">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3>Web Design</h3>
+            <p>
+              Saya memiliki kemampuan dalam merancang antarmuka website yang
+              menarik, responsif, dan user-friendly dengan mengikuti
+              prinsip-prinsip desain modern.
+            </p>
+            <div class="tech-list">
+              <span class="tech-tag">Figma</span>
+              <span class="tech-tag">Adobe XD</span>
+              <span class="tech-tag">UI/UX Design</span>
+              <span class="tech-tag">Responsive Design</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Web Development</h3>
+            <p>
+              Spesialis dalam pengembangan website menggunakan PHP Native dan
+              Laravel untuk membangun aplikasi web yang scalable, aman, dan
+              efisien.
+            </p>
+            <div class="tech-list">
+              <span class="tech-tag">PHP Native</span>
+              <span class="tech-tag">Laravel</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">HTML/CSS</span>
+              <span class="tech-tag">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+      <div class="container">
+        <h2 class="section-title">Project Saya</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-img-container">
+              <img
+                src="1.png"
+                alt="Website Penyewaan Alat Camping - Honey Rangga Lolai, Tanah Toraja"
+                class="project-img"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1501555088652-021faa106b9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80';"
+                loading="lazy"
+              />
+            </div>
+            <div class="project-content">
+              <h3>Sistem Penyewaan Alat Camping</h3>
+              <p>
+                Website penyewaan alat camping di wisata Honey Rangga Lolai,
+                Tanah Toraja. Sistem ini memudahkan pengunjung untuk menyewa
+                alat camping secara online dengan fitur pemesanan dan pembayaran
+                digital.
+              </p>
+              <div class="tech-list">
+                <span class="tech-tag">PHP Native</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Bootstrap</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-img-container">
+              <img
+                src="2.png"
+                alt="Website Administrasi Pelayanan - Kantor Desa Sakti, Kecamatan Bua"
+                class="project-img"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80';"
+                loading="lazy"
+              />
+            </div>
+            <div class="project-content">
+              <h3>Sistem Administrasi Desa</h3>
+              <p>
+                Website administrasi pelayanan di Kantor Desa Sakti, Kecamatan
+                Bua. Sistem ini mengelola administrasi kependudukan, surat
+                menyurat, dan pelayanan publik dengan antarmuka yang mudah
+                digunakan.
+              </p>
+              <div class="tech-list">
+                <span class="tech-tag">PHP Native</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Bootstrap</span>
+                <span class="tech-tag">AJAX</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-img-container">
+              <img
+                src="3.png"
+                alt="Website E-commerce Mba Jus - Usaha Minuman Jus"
+                class="project-img"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80';"
+                loading="lazy"
+              />
+            </div>
+            <div class="project-content">
+              <h3>E-commerce Mba Jus</h3>
+              <p>
+                Website e-commerce untuk usaha minuman jus dengan fitur lengkap:
+                katalog produk, keranjang belanja, checkout, pembayaran online,
+                dan manajemen pesanan. Meningkatkan penjualan hingga 300%.
+              </p>
+              <div class="tech-list">
+                <span class="tech-tag">Laravel</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">Midtrans API</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <h2 class="section-title">Gallery Pribadi</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="guntur1.jpg"
+              alt="Guntur di Konferensi"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80';"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="guntur2.jpg"
+              alt="Guntur Sedang Bekerja"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80';"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="guntur3.jpg"
+              alt="Guntur Presentasi"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80';"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="guntur4.jpg"
+              alt="Foto Profil Guntur"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80';"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile" id="profile">
+      <div class="container">
+        <h2 class="section-title">Profil Saya</h2>
+        <div class="profile-content">
+          <div class="profile-img-container">
+            <img
+              src="gunturprofil.jpg"
+              alt="Guntur S.Kom"
+              class="profile-img-large"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80';"
+              loading="lazy"
+            />
+          </div>
+          <div class="profile-info">
+            <h3>Guntur Saputra, S.Kom</h3>
+            <p>
+              Saya adalah seorang Web Developer dengan latar belakang pendidikan
+              Sarjana Komputer (S.Kom). Saya memiliki passion dalam menciptakan
+              solusi digital yang efektif dan efisien dengan teknologi web
+              terkini.
+            </p>
+            <p>
+              Spesialisasi utama saya adalah dalam pengembangan backend
+              menggunakan PHP Native dan framework Laravel. Saya juga memiliki
+              pengalaman dalam desain antarmuka pengguna yang responsif dan
+              menarik.
+            </p>
+            <div class="profile-details">
+              <div class="profile-detail">
+                <i class="fas fa-user"></i>
+                <div><strong>Nama Lengkap:</strong> Guntur</div>
+              </div>
+              <div class="profile-detail">
+                <i class="fas fa-graduation-cap"></i>
+                <div><strong>Pendidikan:</strong> Sarjana Komputer (S.Kom)</div>
+              </div>
+              <div class="profile-detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <div><strong>Tempat Lahir:</strong> Bua, Sulawesi Selatan</div>
+              </div>
+              <div class="profile-detail">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <strong>Spesialisasi:</strong> Web Development (PHP Native &
+                  Laravel)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-title">Hubungi Saya</h2>
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div>
+                <h3>WhatsApp</h3>
+                <p>+62 85298192561</p>
+                <a
+                  href="https://wa.me/6285298192561"
+                  class="btn"
+                  style="margin-top: 10px; padding: 8px 15px"
+                  >Kirim Pesan</a
+                >
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-instagram"></i>
+              </div>
+              <div>
+                <h3>Instagram</h3>
+                <p>@guntur.dev</p>
+                <a
+                  href="https://www.instagram.com/gunturrrhafid_?igsh=dWlha2RmandyODdr&utm_source=qr"
+                  class="btn"
+                  style="margin-top: 10px; padding: 8px 15px"
+                  >Ikuti Saya</a
+                >
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h3>Email</h3>
+                <p>gunturguntur0407@gmail.com</p>
+                <a
+                  href="mailto:gunturguntur0407@gmail.com"
+                  class="btn"
+                  style="margin-top: 10px; padding: 8px 15px"
+                  >Kirim Email</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-content">
+        <div class="logo">Guntur<span>.DEV</span></div>
+        <p>Web Developer Spesialis PHP Native & Laravel</p>
+        <div class="social-links">
+          <a href="https://wa.me/6285298192561" aria-label="WhatsApp"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/gunturrrhafid_?igsh=dWlha2RmandyODdr&utm_source=qr"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="mailto:gunturguntur0407@gmail.com" aria-label="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+        <p>&copy; 2026 Guntur S.Kom. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        mobileMenuBtn.innerHTML = navLinks.classList.contains("active")
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-bars"></i>';
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+          navLinks.classList.remove("active");
+          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            const headerHeight = document.querySelector("header").offsetHeight;
+            const targetPosition = targetElement.offsetTop - headerHeight;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: "smooth",
+            });
+
+            // Update URL without scrolling
+            history.pushState(null, null, targetId);
+          }
+        });
+      });
+
+      // Active navigation link on scroll
+      const sections = document.querySelectorAll("section");
+      const navLinksArray = document.querySelectorAll(".nav-links a");
+
+      function highlightActiveLink() {
+        let scrollPosition = window.scrollY + 100;
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          const sectionId = section.getAttribute("id");
+
+          if (
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionTop + sectionHeight
+          ) {
+            navLinksArray.forEach((link) => {
+              link.classList.remove("active");
+              if (link.getAttribute("href") === `#${sectionId}`) {
+                link.classList.add("active");
+              }
+            });
+          }
+        });
+      }
+
+      window.addEventListener("scroll", highlightActiveLink);
+
+      // Image loading optimization
+      document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll("img");
+
+        images.forEach((img) => {
+          // Add loading animation
+          img.style.transition = "opacity 0.3s";
+          if (!img.complete) {
+            img.style.opacity = "0";
+          }
+
+          img.addEventListener("load", function () {
+            this.style.opacity = "1";
+          });
+
+          img.addEventListener("error", function () {
+            this.style.opacity = "1";
+            console.log(`Gambar "${this.src}" gagal dimuat.`);
+          });
+        });
+
+        // Touch device detection
+        if ("ontouchstart" in window || navigator.maxTouchPoints) {
+          document.body.classList.add("touch-device");
+        }
+
+        // Prevent zoom on double-tap
+        let lastTouchEnd = 0;
+        document.addEventListener(
+          "touchend",
+          function (event) {
+            const now = new Date().getTime();
+            if (now - lastTouchEnd <= 300) {
+              event.preventDefault();
+            }
+            lastTouchEnd = now;
+          },
+          false
+        );
+      });
+
+      // Handle resize
+      let resizeTimer;
+      window.addEventListener("resize", () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          // Close mobile menu on resize to desktop
+          if (window.innerWidth > 767) {
+            navLinks.classList.remove("active");
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+          }
+        }, 250);
+      });
+    </script>
+  </body>
+</html>
