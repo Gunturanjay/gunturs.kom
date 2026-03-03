@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
     />
-    <title>Portfolio - Guntur S.Kom | Web Developer</title>
+    <title>Portofolio - Guntur S.Kom | Web Developer</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -24,9 +24,11 @@
       }
 
       :root {
-        --primary-orange: #ff1e00;
-        --primary-orange-light: rgba(255, 30, 0, 0.1);
-        --primary-orange-dark: #cc1800;
+        /* Tema Warna Baru: Royal Blue */
+        --primary-color: #2563eb;
+        --primary-color-light: rgba(37, 99, 235, 0.1);
+        --primary-color-dark: #1d4ed8;
+
         --dimly-blue: #e8f9fd;
         --dimly-blue-dark: #d1f2fa;
         --alert-green: #59ce8f;
@@ -37,7 +39,7 @@
         --bg-light: #f8fafc;
         --bg-grey: #f0f3f7;
         --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        --shadow-hover: 0 15px 40px rgba(255, 30, 0, 0.15);
+        --shadow-hover: 0 15px 40px rgba(37, 99, 235, 0.15); /* Disesuaikan dengan warna baru */
         --container-padding: 20px;
         --border-radius: 12px;
         --border-radius-lg: 20px;
@@ -101,7 +103,7 @@
         transform: translateX(-50%);
         width: 80px;
         height: 5px;
-        background: var(--primary-orange);
+        background: var(--primary-color);
         border-radius: 3px;
       }
 
@@ -117,7 +119,7 @@
       .btn {
         display: inline-block;
         padding: 14px 32px;
-        background: var(--primary-orange);
+        background: var(--primary-color);
         color: white;
         border-radius: var(--border-radius);
         font-weight: 600;
@@ -129,7 +131,7 @@
         position: relative;
         overflow: hidden;
         z-index: 1;
-        box-shadow: 0 5px 15px rgba(255, 30, 0, 0.2);
+        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
       }
 
       .btn::before {
@@ -139,7 +141,7 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background: var(--primary-orange-dark);
+        background: var(--primary-color-dark);
         transition: left 0.6s ease;
         z-index: -1;
       }
@@ -155,13 +157,13 @@
 
       .btn-outline {
         background: transparent;
-        color: var(--primary-orange);
-        border: 2px solid var(--primary-orange);
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
         box-shadow: none;
       }
 
       .btn-outline:hover {
-        background: var(--primary-orange);
+        background: var(--primary-color);
         color: white;
       }
 
@@ -196,7 +198,7 @@
       }
 
       .logo span {
-        color: var(--primary-orange);
+        color: var(--primary-color);
       }
 
       .nav-links {
@@ -215,7 +217,7 @@
       }
 
       .nav-links a:hover {
-        color: var(--primary-orange);
+        color: var(--primary-color);
       }
 
       .nav-links a::after {
@@ -225,7 +227,7 @@
         left: 0;
         width: 0;
         height: 2px;
-        background: var(--primary-orange);
+        background: var(--primary-color);
         transition: width 0.3s ease;
       }
 
@@ -246,7 +248,7 @@
       }
 
       .mobile-menu-btn:hover {
-        color: var(--primary-orange);
+        color: var(--primary-color);
       }
 
       /* HERO SECTION */
@@ -275,7 +277,7 @@
         background:
           radial-gradient(
             circle at 20% 80%,
-            rgba(255, 30, 0, 0.05) 0%,
+            var(--primary-color-light) 0%,
             transparent 50%
           ),
           radial-gradient(
@@ -296,7 +298,7 @@
         width: 100%;
       }
 
-      /* MOBILE FIRST: Foto di atas, teks di bawah */
+      /* MOBILE FIRST */
       @media (max-width: 991px) {
         .hero-content {
           grid-template-columns: 1fr;
@@ -330,7 +332,7 @@
         }
       }
 
-      /* DESKTOP: Side by side layout */
+      /* DESKTOP */
       @media (min-width: 992px) {
         .hero-content {
           grid-template-columns: 1.2fr 1fr;
@@ -372,7 +374,7 @@
       }
 
       .hero-text h1 span {
-        color: var(--primary-orange);
+        color: var(--primary-color);
       }
 
       .hero-text p {
@@ -386,7 +388,7 @@
       .hero-tagline {
         font-size: clamp(1.1rem, 3vw, 1.3rem);
         font-weight: 600;
-        color: var(--primary-orange);
+        color: var(--primary-color);
         margin-bottom: 15px;
         display: inline-block;
       }
@@ -429,7 +431,7 @@
         position: absolute;
         width: clamp(40px, 8vw, 60px);
         height: clamp(40px, 8vw, 60px);
-        background: var(--primary-orange);
+        background: var(--primary-color);
         border-radius: 15px;
         display: flex;
         align-items: center;
@@ -437,7 +439,7 @@
         font-size: clamp(1rem, 2vw, 1.5rem);
         color: white;
         animation: floatElement 6s ease-in-out infinite;
-        box-shadow: 0 10px 20px rgba(255, 30, 0, 0.2);
+        box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
       }
 
       .floating-element:nth-child(1) {
@@ -459,7 +461,7 @@
         width: clamp(30px, 6vw, 40px);
         height: clamp(30px, 6vw, 40px);
         background: var(--dimly-blue-dark);
-        color: var(--primary-orange);
+        color: var(--primary-color);
         animation-delay: -4s;
       }
 
@@ -483,7 +485,7 @@
         z-index: 2;
         box-shadow:
           0 20px 40px rgba(0, 0, 0, 0.1),
-          inset 0 0 0 1px rgba(255, 30, 0, 0.1);
+          inset 0 0 0 1px rgba(37, 99, 235, 0.1);
         transition: var(--transition);
         cursor: pointer;
       }
@@ -491,8 +493,8 @@
       .profile-img:hover {
         transform: scale(1.02);
         box-shadow:
-          0 25px 50px rgba(255, 30, 0, 0.15),
-          inset 0 0 0 1px rgba(255, 30, 0, 0.2);
+          0 25px 50px rgba(37, 99, 235, 0.15),
+          inset 0 0 0 1px rgba(37, 99, 235, 0.2);
       }
 
       /* Process Steps */
@@ -532,7 +534,7 @@
         left: 0;
         width: 100%;
         height: 3px;
-        background: var(--primary-orange);
+        background: var(--primary-color);
         transform: scaleX(0);
         transition: transform 0.3s ease;
       }
@@ -543,14 +545,14 @@
 
       .process-step:hover {
         transform: translateY(-10px);
-        border-color: rgba(255, 30, 0, 0.3);
+        border-color: rgba(37, 99, 235, 0.3);
         box-shadow: var(--shadow-hover);
       }
 
       .step-icon {
         font-size: 1.8rem;
         margin-bottom: 15px;
-        color: var(--primary-orange);
+        color: var(--primary-color);
       }
 
       .step-title {
@@ -597,7 +599,7 @@
       .stat-number {
         font-size: clamp(1.8rem, 4vw, 2.2rem);
         font-weight: 800;
-        color: var(--primary-orange);
+        color: var(--primary-color);
         font-family: "Montserrat", sans-serif;
         display: block;
       }
@@ -641,13 +643,13 @@
 
       .skill-card:hover {
         transform: translateY(-10px);
-        border-color: rgba(255, 30, 0, 0.3);
+        border-color: rgba(37, 99, 235, 0.3);
         box-shadow: var(--shadow-hover);
       }
 
       .skill-icon {
         font-size: clamp(2.5rem, 4vw, 3rem);
-        color: var(--primary-orange);
+        color: var(--primary-color);
         margin-bottom: 20px;
       }
 
@@ -672,19 +674,19 @@
       }
 
       .tech-tag {
-        background: rgba(255, 30, 0, 0.1);
-        color: var(--primary-orange);
+        background: var(--primary-color-light);
+        color: var(--primary-color);
         padding: 6px 12px;
         border-radius: 20px;
         font-size: 0.8rem;
         font-weight: 500;
-        border: 1px solid rgba(255, 30, 0, 0.2);
+        border: 1px solid rgba(37, 99, 235, 0.2);
         transition: var(--transition);
         white-space: nowrap;
       }
 
       .tech-tag:hover {
-        background: rgba(255, 30, 0, 0.2);
+        background: rgba(37, 99, 235, 0.2);
         transform: translateY(-2px);
       }
 
@@ -709,7 +711,6 @@
         border: 1px solid rgba(232, 249, 253, 0.8);
         transition: var(--transition);
         position: relative;
-        overflow: hidden;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -718,7 +719,7 @@
 
       .project-card:hover {
         transform: translateY(-10px);
-        border-color: rgba(255, 30, 0, 0.3);
+        border-color: rgba(37, 99, 235, 0.3);
         box-shadow: var(--shadow-hover);
       }
 
@@ -756,7 +757,7 @@
         transform: translate(-50%, -50%) scale(0);
         color: white;
         font-size: 2rem;
-        background: rgba(255, 30, 0, 0.8);
+        background: rgba(37, 99, 235, 0.8);
         width: 60px;
         height: 60px;
         border-radius: 50%;
@@ -858,7 +859,7 @@
 
       .gallery-item:hover {
         transform: translateY(-5px);
-        border-color: rgba(255, 30, 0, 0.3);
+        border-color: rgba(37, 99, 235, 0.3);
         box-shadow: var(--shadow-hover);
       }
 
@@ -883,7 +884,7 @@
         transform: translate(-50%, -50%) scale(0);
         color: white;
         font-size: 1.5rem;
-        background: rgba(255, 30, 0, 0.8);
+        background: rgba(37, 99, 235, 0.8);
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -948,7 +949,7 @@
       }
 
       .profile-img-large:hover {
-        border-color: rgba(255, 30, 0, 0.3);
+        border-color: rgba(37, 99, 235, 0.3);
         transform: scale(1.02);
       }
 
@@ -976,7 +977,7 @@
       }
 
       .profile-detail i {
-        color: var(--primary-orange);
+        color: var(--primary-color);
         width: 35px;
         font-size: 1.2rem;
         margin-top: 2px;
@@ -1038,7 +1039,7 @@
 
       .contact-item:hover {
         transform: translateY(-5px);
-        border-color: rgba(255, 30, 0, 0.3);
+        border-color: rgba(37, 99, 235, 0.3);
         box-shadow: var(--shadow-hover);
       }
 
@@ -1047,13 +1048,13 @@
         height: 50px;
         min-width: 50px;
         border-radius: 12px;
-        background: var(--primary-orange);
+        background: var(--primary-color);
         color: white;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 1.3rem;
-        box-shadow: 0 5px 15px rgba(255, 30, 0, 0.2);
+        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
         flex-shrink: 0;
       }
 
@@ -1104,16 +1105,16 @@
         width: 45px;
         height: 45px;
         border-radius: 12px;
-        background: rgba(255, 30, 0, 0.1);
+        background: var(--primary-color-light);
         display: flex;
         align-items: center;
         justify-content: center;
         transition: var(--transition);
-        border: 1px solid rgba(255, 30, 0, 0.2);
+        border: 1px solid rgba(37, 99, 235, 0.2);
       }
 
       .social-links a:hover {
-        background: var(--primary-orange);
+        background: var(--primary-color);
         color: white;
         transform: translateY(-5px) scale(1.1);
         border-color: transparent;
@@ -1195,7 +1196,7 @@
       }
 
       .modal-close:hover {
-        color: var(--primary-orange);
+        color: var(--primary-color);
         transform: rotate(90deg);
       }
 
@@ -1210,7 +1211,7 @@
       }
 
       .modal-nav-btn {
-        background: rgba(255, 30, 0, 0.8);
+        background: rgba(37, 99, 235, 0.8);
         color: white;
         border: none;
         width: 50px;
@@ -1225,7 +1226,7 @@
       }
 
       .modal-nav-btn:hover {
-        background: var(--primary-orange);
+        background: var(--primary-color);
         transform: scale(1.1);
       }
 
@@ -1440,12 +1441,12 @@
       }
 
       ::-webkit-scrollbar-thumb {
-        background: var(--primary-orange);
+        background: var(--primary-color);
         border-radius: 4px;
       }
 
       ::-webkit-scrollbar-thumb:hover {
-        background: var(--primary-orange-dark);
+        background: var(--primary-color-dark);
       }
 
       /* Safe area untuk iPhone dengan notch */
@@ -1501,7 +1502,6 @@
     </style>
   </head>
   <body>
-    <!-- Image Modal -->
     <div class="image-modal" id="imageModal">
       <div class="modal-content">
         <button class="modal-close" id="modalClose">
@@ -1520,7 +1520,6 @@
       </div>
     </div>
 
-    <!-- Header & Navigation -->
     <header>
       <div class="container header-container">
         <div class="logo">Guntur<span>.DEV</span></div>
@@ -1532,32 +1531,31 @@
           <i class="fas fa-bars"></i>
         </button>
         <nav class="nav-links" id="navLinks">
-          <a href="#home" class="active">Home</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#profile">About</a>
-          <a href="#contact">Contact</a>
+          <a href="#home" class="active">Beranda</a>
+          <a href="#skills">Keahlian</a>
+          <a href="#projects">Proyek</a>
+          <a href="#gallery">Galeri</a>
+          <a href="#profile">Tentang</a>
+          <a href="#contact">Kontak</a>
         </nav>
       </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
             <div class="hero-tagline" data-aos="fade-up" data-aos-delay="100">
-              Professional Portfolio
+              Portofolio Profesional
             </div>
             <h1 data-aos="fade-up" data-aos-delay="200">
-              I'm <span>Guntur S.Kom</span><br />Professional Web Developer
+              Saya <span>Guntur S.Kom</span><br />Web Developer Profesional
             </h1>
             <p data-aos="fade-up" data-aos-delay="300">
-              A dedicated web developer from Indonesia, specializing in PHP
-              Native and Laravel. I create engaging and functional digital
-              experiences to solve business challenges and drive results for
-              clients worldwide.
+              Seorang web developer berdedikasi dari Indonesia, dengan
+              spesialisasi di PHP Native dan Laravel. Saya menciptakan
+              pengalaman digital yang menarik dan fungsional untuk memberikan
+              solusi bisnis yang optimal.
             </p>
             <div
               data-aos="fade-up"
@@ -1569,8 +1567,8 @@
                 flex-wrap: wrap;
               "
             >
-              <a href="#projects" class="btn">View My Projects</a>
-              <a href="#contact" class="btn btn-outline">Contact Me</a>
+              <a href="#projects" class="btn">Lihat Proyek Saya</a>
+              <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
             </div>
 
             <div class="process-steps">
@@ -1578,30 +1576,30 @@
                 <div class="step-icon">
                   <i class="fas fa-palette"></i>
                 </div>
-                <h3 class="step-title">From Design</h3>
-                <p class="step-desc">Intuitive and attractive UI/UX</p>
+                <h3 class="step-title">Dari Desain</h3>
+                <p class="step-desc">UI/UX yang intuitif dan menarik</p>
               </div>
               <div class="process-step" data-aos="fade-up" data-aos-delay="600">
                 <div class="step-icon">
                   <i class="fas fa-code"></i>
                 </div>
-                <h3 class="step-title">To Code</h3>
-                <p class="step-desc">Clean and scalable code</p>
+                <h3 class="step-title">Ke Kode</h3>
+                <p class="step-desc">Kode yang bersih dan terstruktur</p>
               </div>
             </div>
 
             <div class="hero-stats">
               <div class="stat-item" data-aos="fade-up" data-aos-delay="700">
                 <span class="stat-number">50+</span>
-                <div class="stat-label">Projects Done</div>
+                <div class="stat-label">Proyek Selesai</div>
               </div>
               <div class="stat-item" data-aos="fade-up" data-aos-delay="800">
                 <span class="stat-number">100%</span>
-                <div class="stat-label">Client Satisfaction</div>
+                <div class="stat-label">Klien Puas</div>
               </div>
               <div class="stat-item" data-aos="fade-up" data-aos-delay="900">
                 <span class="stat-number">24/7</span>
-                <div class="stat-label">Support</div>
+                <div class="stat-label">Dukungan</div>
               </div>
             </div>
           </div>
@@ -1650,40 +1648,40 @@
       </div>
     </section>
 
-    <!-- Skills Section -->
     <section class="skills" id="skills">
       <div class="container">
-        <h2 class="section-title" data-aos="fade-up">My Expertise</h2>
+        <h2 class="section-title" data-aos="fade-up">Keahlian Saya</h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-          I possess expertise in various web development technologies to create
-          effective and efficient digital solutions.
+          Saya memiliki keahlian dalam berbagai teknologi pengembangan web untuk
+          menciptakan solusi digital yang efektif dan efisien.
         </p>
         <div class="skills-container">
           <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
             <div class="skill-icon">
               <i class="fas fa-paint-brush"></i>
             </div>
-            <h3>Web Design</h3>
+            <h3>Desain Web</h3>
             <p>
-              I have the ability to design attractive, responsive, and
-              user-friendly website interfaces following modern design
-              principles.
+              Saya memiliki kemampuan untuk merancang antarmuka situs web yang
+              menarik, responsif, dan ramah pengguna mengikuti prinsip desain
+              modern.
             </p>
             <div class="tech-list">
               <span class="tech-tag">Figma</span>
               <span class="tech-tag">Adobe XD</span>
-              <span class="tech-tag">UI/UX Design</span>
-              <span class="tech-tag">Responsive Design</span>
+              <span class="tech-tag">Desain UI/UX</span>
+              <span class="tech-tag">Desain Responsif</span>
             </div>
           </div>
           <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
             <div class="skill-icon">
               <i class="fas fa-code"></i>
             </div>
-            <h3>Web Development</h3>
+            <h3>Pengembangan Web</h3>
             <p>
-              Specialist in website development using PHP Native and Laravel to
-              build scalable, secure, and efficient web applications.
+              Spesialis dalam pengembangan situs web menggunakan PHP Native dan
+              Laravel untuk membangun aplikasi web yang berskala, aman, dan
+              efisien.
             </p>
             <div class="tech-list">
               <span class="tech-tag">PHP Native</span>
@@ -1698,25 +1696,23 @@
       </div>
     </section>
 
-    <!-- Projects Section -->
     <section class="projects" id="projects">
       <div class="container">
-        <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+        <h2 class="section-title" data-aos="fade-up">Proyek Saya</h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-          A selection of projects I've completed using various technologies and
-          approaches.
+          Kumpulan proyek yang telah saya selesaikan menggunakan berbagai
+          teknologi dan pendekatan.
         </p>
         <div class="projects-grid">
-          <!-- Project 1 -->
           <div class="project-card" data-aos="fade-up" data-aos-delay="200">
             <div
               class="project-img-container"
               data-image-index="0"
-              data-caption="Camping Equipment Rental System - Honey Rangga Lolai, Tanah Toraja"
+              data-caption="Sistem Penyewaan Alat Camping - Honey Rangga Lolai, Tanah Toraja"
             >
               <img
                 src="1.png"
-                alt="Camping Equipment Rental Website - Honey Rangga Lolai, Tanah Toraja"
+                alt="Website Penyewaan Alat Camping - Honey Rangga Lolai, Tanah Toraja"
                 class="project-img"
                 onerror="
                   this.onerror = null;
@@ -1727,10 +1723,11 @@
               />
             </div>
             <div class="project-content">
-              <h3>Camping Equipment Rental System</h3>
+              <h3>Sistem Penyewaan Alat Camping</h3>
               <p>
-                Camping equipment rental website at Honey Rangga Lolai tourism
-                site, Tanah Toraja with booking and digital payment features.
+                Situs web penyewaan peralatan camping di tempat wisata Honey
+                Rangga Lolai, Tanah Toraja dengan fitur pemesanan dan pembayaran
+                digital.
               </p>
               <div class="tech-list">
                 <span class="tech-tag">PHP Native</span>
@@ -1740,16 +1737,15 @@
               </div>
             </div>
           </div>
-          <!-- Project 2 -->
           <div class="project-card" data-aos="fade-up" data-aos-delay="250">
             <div
               class="project-img-container"
               data-image-index="1"
-              data-caption="Village Administration System - Sakti Village Office, Bua District"
+              data-caption="Sistem Administrasi Desa - Kantor Desa Sakti, Kecamatan Bua"
             >
               <img
                 src="2.png"
-                alt="Administrative Services Website - Sakti Village Office, Bua District"
+                alt="Website Pelayanan Administrasi - Kantor Desa Sakti, Kecamatan Bua"
                 class="project-img"
                 onerror="
                   this.onerror = null;
@@ -1760,10 +1756,10 @@
               />
             </div>
             <div class="project-content">
-              <h3>Village Administration System</h3>
+              <h3>Sistem Administrasi Desa</h3>
               <p>
-                Administrative services website at Sakti Village Office with an
-                easy-to-use interface for population administration.
+                Situs web pelayanan administrasi di Kantor Desa Sakti dengan
+                antarmuka yang mudah digunakan untuk administrasi kependudukan.
               </p>
               <div class="tech-list">
                 <span class="tech-tag">PHP Native</span>
@@ -1773,16 +1769,15 @@
               </div>
             </div>
           </div>
-          <!-- Project 3 -->
           <div class="project-card" data-aos="fade-up" data-aos-delay="300">
             <div
               class="project-img-container"
               data-image-index="2"
-              data-caption="Mba Jus E-commerce - Juice Business Website"
+              data-caption="E-commerce Mba Jus - Website Bisnis Jus"
             >
               <img
                 src="3.png"
-                alt="Mba Jus E-commerce Website - Juice Business"
+                alt="Website E-commerce Mba Jus - Bisnis Jus"
                 class="project-img"
                 onerror="
                   this.onerror = null;
@@ -1793,10 +1788,10 @@
               />
             </div>
             <div class="project-content">
-              <h3>Mba Jus E-commerce</h3>
+              <h3>E-commerce Mba Jus</h3>
               <p>
-                E-commerce website for a juice beverage business with
-                comprehensive features that increased sales by 300%.
+                Situs web e-commerce untuk bisnis minuman jus dengan fitur
+                lengkap yang meningkatkan penjualan hingga 300%.
               </p>
               <div class="tech-list">
                 <span class="tech-tag">Laravel</span>
@@ -1806,16 +1801,15 @@
               </div>
             </div>
           </div>
-          <!-- Project 4 -->
           <div class="project-card" data-aos="fade-up" data-aos-delay="350">
             <div
               class="project-img-container"
               data-image-index="3"
-              data-caption="Bungapati Village Administration System"
+              data-caption="Sistem Administrasi Desa Bungapati"
             >
               <img
                 src="4.png"
-                alt="Bungapati Village Administration Website"
+                alt="Website Administrasi Desa Bungapati"
                 class="project-img"
                 onerror="
                   this.onerror = null;
@@ -1826,10 +1820,10 @@
               />
             </div>
             <div class="project-content">
-              <h3>Bungapati Village Administration System</h3>
+              <h3>Sistem Administrasi Desa Bungapati</h3>
               <p>
-                Administrative services website at Bungapati Village Office with
-                a user-friendly interface for population administration.
+                Situs web pelayanan administrasi di Kantor Desa Bungapati dengan
+                antarmuka yang ramah pengguna untuk administrasi kependudukan.
               </p>
               <div class="tech-list">
                 <span class="tech-tag">PHP Native</span>
@@ -1839,16 +1833,15 @@
               </div>
             </div>
           </div>
-          <!-- Project 5 -->
           <div class="project-card" data-aos="fade-up" data-aos-delay="400">
             <div
               class="project-img-container"
               data-image-index="4"
-              data-caption="Cocoa Cultivation Information System"
+              data-caption="Sistem Informasi Budidaya Kakao"
             >
               <img
                 src="5.png"
-                alt="Cocoa Cultivation Information System"
+                alt="Sistem Informasi Budidaya Kakao"
                 class="project-img"
                 onerror="
                   this.onerror = null;
@@ -1859,11 +1852,11 @@
               />
             </div>
             <div class="project-content">
-              <h3>Cocoa Cultivation Information System</h3>
+              <h3>Sistem Informasi Budidaya Kakao</h3>
               <p>
-                Web-based cocoa cultivation information system application
-                designed with an easy-to-use interface to support data
-                management.
+                Aplikasi sistem informasi budidaya kakao berbasis web yang
+                dirancang dengan antarmuka yang mudah untuk mendukung manajemen
+                data.
               </p>
               <div class="tech-list">
                 <span class="tech-tag">PHP Native</span>
@@ -1873,16 +1866,15 @@
               </div>
             </div>
           </div>
-          <!-- Project 6 -->
           <div class="project-card" data-aos="fade-up" data-aos-delay="450">
             <div
               class="project-img-container"
               data-image-index="5"
-              data-caption="Yacht Club Beach Tourism Information System Sorowako"
+              data-caption="Sistem Informasi Wisata Pantai Yacht Club Sorowako"
             >
               <img
                 src="6.png"
-                alt="Yacht Club Beach Tourism Information System Sorowako"
+                alt="Sistem Informasi Wisata Pantai Yacht Club Sorowako"
                 class="project-img"
                 onerror="
                   this.onerror = null;
@@ -1893,10 +1885,10 @@
               />
             </div>
             <div class="project-content">
-              <h3>Beach Tourism Information System</h3>
+              <h3>Sistem Informasi Wisata Pantai</h3>
               <p>
-                Yacht Club Beach Sorowako tourism information system based on
-                website designed with an easy-to-use interface.
+                Sistem informasi wisata Pantai Yacht Club Sorowako berbasis web
+                yang dirancang dengan antarmuka yang mudah digunakan.
               </p>
               <div class="tech-list">
                 <span class="tech-tag">PHP Native</span>
@@ -1906,16 +1898,15 @@
               </div>
             </div>
           </div>
-          <!-- Project 7 -->
           <div class="project-card" data-aos="fade-up" data-aos-delay="500">
             <div
               class="project-img-container"
               data-image-index="6"
-              data-caption="Vineyard Tourism Information System - PHP Native"
+              data-caption="Sistem Informasi Wisata Kebun Anggur - PHP Native"
             >
               <img
                 src="7.png"
-                alt="Vineyard Tourism Information System"
+                alt="Sistem Informasi Wisata Kebun Anggur"
                 class="project-img"
                 onerror="
                   this.onerror = null;
@@ -1926,11 +1917,12 @@
               />
             </div>
             <div class="project-content">
-              <h3>Vineyard Tourism Information System</h3>
+              <h3>Sistem Informasi Wisata Kebun Anggur</h3>
               <p>
-                Web-based vineyard tourism information system designed with an
-                easy-to-use interface to present destination information,
-                tourism activities, facilities, and grape cultivation education.
+                Sistem informasi wisata kebun anggur berbasis web yang dirancang
+                dengan antarmuka yang mudah digunakan untuk menyajikan informasi
+                destinasi, aktivitas wisata, fasilitas, dan edukasi budidaya
+                anggur.
               </p>
               <div class="tech-list">
                 <span class="tech-tag">PHP Native</span>
@@ -1946,23 +1938,22 @@
       </div>
     </section>
 
-    <!-- Gallery Section -->
     <section class="gallery" id="gallery">
       <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Personal Gallery</h2>
+        <h2 class="section-title" data-aos="fade-up">Galeri Pribadi</h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-          Some moments in my career journey and development as a web developer.
+          Beberapa momen dalam perjalanan karier dan perkembangan saya sebagai
+          web developer.
         </p>
         <div class="gallery-grid">
-          <!-- Gallery 1 -->
           <div
             class="gallery-item"
             data-image-index="7"
-            data-caption="Guntur at Technology Conference"
+            data-caption="Guntur di Konferensi Teknologi"
           >
             <img
               src="guntur1.jpg"
-              alt="Guntur at Conference"
+              alt="Guntur di Konferensi"
               onerror="
                 this.onerror = null;
                 this.src =
@@ -1971,15 +1962,14 @@
               loading="lazy"
             />
           </div>
-          <!-- Gallery 2 -->
           <div
             class="gallery-item"
             data-image-index="8"
-            data-caption="Guntur Working as a Web Developer"
+            data-caption="Guntur Sedang Bekerja sebagai Web Developer"
           >
             <img
               src="guntur2.jpg"
-              alt="Guntur Working"
+              alt="Guntur Sedang Bekerja"
               onerror="
                 this.onerror = null;
                 this.src =
@@ -1988,15 +1978,14 @@
               loading="lazy"
             />
           </div>
-          <!-- Gallery 3 -->
           <div
             class="gallery-item"
             data-image-index="9"
-            data-caption="Guntur Presenting Web Development Project"
+            data-caption="Guntur Melakukan Presentasi Proyek Pengembangan Web"
           >
             <img
               src="guntur3.jpg"
-              alt="Guntur Presenting"
+              alt="Guntur Melakukan Presentasi"
               onerror="
                 this.onerror = null;
                 this.src =
@@ -2005,15 +1994,14 @@
               loading="lazy"
             />
           </div>
-          <!-- Gallery 4 -->
           <div
             class="gallery-item"
             data-image-index="10"
-            data-caption="Profile Photo of Guntur S.Kom"
+            data-caption="Foto Profil Guntur S.Kom"
           >
             <img
               src="guntur4.jpg"
-              alt="Guntur Profile Photo"
+              alt="Foto Profil Guntur"
               onerror="
                 this.onerror = null;
                 this.src =
@@ -2026,12 +2014,12 @@
       </div>
     </section>
 
-    <!-- Profile Section -->
     <section class="profile" id="profile">
       <div class="container">
-        <h2 class="section-title" data-aos="fade-up">About Me</h2>
+        <h2 class="section-title" data-aos="fade-up">Tentang Saya</h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-          Learn more about my background, education, and specialization.
+          Pelajari lebih lanjut tentang latar belakang, pendidikan, dan
+          spesialisasi saya.
         </p>
         <div class="profile-content">
           <div class="profile-img-container" data-aos="fade-right">
@@ -2051,74 +2039,71 @@
           <div class="profile-info" data-aos="fade-left">
             <h3>Guntur, S.Kom</h3>
             <p>
-              I am a Web Developer from Indonesia with a Bachelor's degree in
-              Computer Science (S.Kom). I have a passion for creating effective
-              and efficient digital solutions using the latest web technologies.
+              Saya adalah seorang Web Developer dari Indonesia dengan gelar
+              Sarjana Komputer (S.Kom). Saya memiliki semangat untuk menciptakan
+              solusi digital yang efektif dan efisien menggunakan teknologi web
+              terkini.
             </p>
             <p>
-              My main specialization is in backend development using PHP Native
-              and the Laravel framework. I also have experience in designing
-              responsive and attractive user interfaces.
+              Spesialisasi utama saya adalah pengembangan backend menggunakan
+              PHP Native dan framework Laravel. Saya juga memiliki pengalaman
+              dalam merancang antarmuka pengguna yang responsif dan menarik.
             </p>
             <p>
-              <strong>Note:</strong> While my English proficiency is limited, I
-              can communicate effectively using translation tools like ChatGPT
-              and other apps to ensure clear understanding and collaboration.
-              I'm eager to learn and improve my English skills while delivering
-              high-quality work.
+              <strong>Catatan:</strong> Meskipun kemampuan bahasa Inggris saya
+              terbatas, saya dapat berkomunikasi dengan efektif menggunakan alat
+              terjemahan seperti ChatGPT dan aplikasi lainnya untuk memastikan
+              pemahaman dan kolaborasi yang baik. Saya selalu bersemangat untuk
+              belajar dan memberikan hasil kerja berkualitas tinggi.
             </p>
             <div class="profile-details">
               <div class="profile-detail">
                 <i class="fas fa-user"></i>
-                <div><strong>Full Name:</strong> Guntur</div>
+                <div><strong>Nama Lengkap:</strong> Guntur</div>
               </div>
               <div class="profile-detail">
                 <i class="fas fa-globe"></i>
-                <div><strong>Country:</strong> Indonesia</div>
+                <div><strong>Negara:</strong> Indonesia</div>
               </div>
               <div class="profile-detail">
                 <i class="fas fa-graduation-cap"></i>
-                <div>
-                  <strong>Education:</strong> Bachelor of Computer Science
-                  (S.Kom)
-                </div>
+                <div><strong>Pendidikan:</strong> Sarjana Komputer (S.Kom)</div>
               </div>
               <div class="profile-detail">
                 <i class="fas fa-map-marker-alt"></i>
                 <div>
-                  <strong>Location:</strong> Bua, South Sulawesi, Indonesia
+                  <strong>Lokasi:</strong> Bua, Sulawesi Selatan, Indonesia
                 </div>
               </div>
               <div class="profile-detail">
                 <i class="fas fa-briefcase"></i>
                 <div>
-                  <strong>Specialization:</strong> Web Development (PHP Native &
+                  <strong>Spesialisasi:</strong> Web Development (PHP Native &
                   Laravel)
                 </div>
               </div>
               <div class="profile-detail">
                 <i class="fas fa-language"></i>
                 <div>
-                  <strong>Languages:</strong> Indonesian (Native), English
-                  (Basic - assisted by translation tools)
+                  <strong>Bahasa:</strong> Indonesia (Penutur Asli), Inggris
+                  (Dasar - dibantu alat terjemahan)
                 </div>
               </div>
             </div>
             <a href="#contact" class="btn" style="margin-top: 20px"
-              >Contact Me</a
+              >Hubungi Saya</a
             >
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
       <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Contact Me</h2>
+        <h2 class="section-title" data-aos="fade-up">Kontak</h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-          Let's collaborate to bring your ideas to life into engaging digital
-          solutions.
+          Mari berkolaborasi untuk mewujudkan ide Anda menjadi solusi digital
+          yang menarik.
         </p>
         <div class="contact-container">
           <div class="contact-info">
@@ -2134,7 +2119,7 @@
                   class="btn"
                   style="margin-top: 10px; padding: 10px 20px"
                   target="_blank"
-                  >Send Message</a
+                  >Kirim Pesan</a
                 >
               </div>
             </div>
@@ -2150,7 +2135,7 @@
                   class="btn"
                   style="margin-top: 10px; padding: 10px 20px"
                   target="_blank"
-                  >Follow Me</a
+                  >Ikuti Saya</a
                 >
               </div>
             </div>
@@ -2165,7 +2150,7 @@
                   href="mailto:gunturguntur0407@gmail.com"
                   class="btn"
                   style="margin-top: 10px; padding: 10px 20px"
-                  >Send Email</a
+                  >Kirim Email</a
                 >
               </div>
             </div>
@@ -2174,13 +2159,12 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
       <div class="container footer-content">
         <div class="logo">Guntur<span>.DEV</span></div>
         <p style="color: var(--text-light); max-width: 500px">
-          Web Developer specializing in PHP Native & Laravel, creating
-          innovative and effective digital solutions.
+          Web Developer dengan spesialisasi di PHP Native & Laravel, menciptakan
+          solusi digital yang inovatif dan efektif.
         </p>
         <div class="social-links">
           <a
@@ -2211,7 +2195,7 @@
           </a>
         </div>
         <p style="color: var(--text-light); font-size: 0.9rem">
-          &copy; 2024 Guntur S.Kom. All rights reserved.
+          &copy; 2024 Guntur S.Kom. Hak cipta dilindungi undang-undang.
         </p>
       </div>
     </footer>
@@ -2397,7 +2381,7 @@
           allImages.push({
             src: heroImg.src,
             alt: heroImg.alt,
-            caption: "Guntur S.Kom - Professional Web Developer",
+            caption: "Guntur S.Kom - Web Developer Profesional",
             element: heroImg,
           });
         }
@@ -2406,7 +2390,7 @@
           allImages.push({
             src: profileImg.src,
             alt: profileImg.alt,
-            caption: "Guntur S.Kom - Profile Photo",
+            caption: "Guntur S.Kom - Foto Profil",
             element: profileImg,
           });
         }
